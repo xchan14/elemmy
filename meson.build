@@ -1,4 +1,7 @@
 project('io.github.xchan14.elemmy', 'vala', 'c')
+i18n = import('i18n') # translation module
+
+add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), language: 'c')
 
 executable(
     meson.project_name(),
@@ -9,19 +12,21 @@ executable(
     install: true
 )
 
-
-
-# Install .desktop file
-install_data(
-    'data' / 'elemmy.desktop',
-    install_dir: get_option('datadir') / 'applications',
-    rename: meson.project_name() + '.desktop'
+i18n.merge_file(
+    input: 'data' / 'elemmy.desktop.in',
+    output: meson.project_name() + '.desktop',
+    po_dir: meson.source_root() / 'po',
+    type: 'desktop',
+    install: true,
+    install_dir: get_option('datadir') / 'applications'
 )
 
-
-# Install .metainfo.xml
-install_data(
-    'data' / 'elemmy.metainfo.xml',
-    install_dir: get_option('datadir') / 'metainfo',
-    rename: meson.project_name() + '.metainfo.xml'
+i18n.merge_file(
+    input: 'data' / 'elemmy.metainfo.xml.in',
+    output: meson.project_name() + '.metainfo.xml',
+    po_dir: meson.source_root() / 'po',
+    install: true,
+    install_dir: get_option('datadir') / 'metainfo'
 )
+
+subdir('po')
