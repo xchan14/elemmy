@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.xchan14.elemmy</id>
+  
+  <name>ELemmy</name>
+  <summary>Lemmy client for elementary OS</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  
+  <description>
+    <p>
+      Browse Lemmy with this native client for elementary OS.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">io.github.xchan14.elemmy.desktop</launchable>
+</component>

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=ELemmy
+Comment=Lemmy client for elementary OS
+Categories=Internet;
+
+Icon=elemmy
+Exec=io.github.xchan14.elemmy
+Terminal=false
