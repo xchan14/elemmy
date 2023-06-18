@@ -1,0 +1,1 @@
+flatpak remove io.github.xchan14.elemmy
