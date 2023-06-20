@@ -6,6 +6,6 @@ Name=ELemmy
 Comment=Lemmy client for elementary OS
 Categories=Internet;
 
-Icon=elemmy
+Icon=io.github.xchan14.elemmy
 Exec=io.github.xchan14.elemmy
 Terminal=false
