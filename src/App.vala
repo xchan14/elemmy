@@ -14,11 +14,18 @@ public class App : Gtk.Application {
     }
 
     protected override void activate() {
-        var main_window = new Gtk.ApplicationWindow(this) {
-            default_height = 300,
-            default_width = 300,
-            title = "Hello world"
+
+        var paned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL) {
+            resize_start_child = false,
+            shrink_end_child = false,
+            shrink_start_child = false
         };
+
+        var main_window = new Gtk.ApplicationWindow(this) {
+            child = paned,
+            titlebar = new Gtk.Grid() { visible = false }
+        };
+
         main_window.present();
     }
 
